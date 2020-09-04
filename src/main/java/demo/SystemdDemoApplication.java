@@ -15,7 +15,7 @@ public class SystemdDemoApplication {
 
     @GetMapping(path = "/")
     public String home() {
-        return "Hello World!";
+        return "Hello, World!";
     }
 
 }

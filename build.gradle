@@ -1,21 +1,23 @@
 import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 plugins {
-    id 'java'
-    id 'org.springframework.boot' version '2.3.3.RELEASE'
+    id("java")
+    id("org.springframework.boot").version("2.3.3.RELEASE")
 }
-
-sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation platform(SpringBootPlugin.BOM_COORDINATES)
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation(platform(SpringBootPlugin.BOM_COORDINATES))
+    implementation("org.springframework.boot:spring-boot-starter-web")
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
 }
 
 test {
