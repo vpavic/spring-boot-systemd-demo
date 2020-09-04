@@ -1,0 +1,12 @@
+[Unit]
+Description=Spring Boot systemd service
+After=network.target syslog.target
+
+[Service]
+#Environment=JAVA_TOOL_OPTIONS=
+Environment=LOG_FILE=/tmp/spring-boot-systemd-service.log
+ExecStart=/path/to/java -jar /path/to/spring-boot-systemd-service.jar
+SuccessExitStatus=143
+
+[Install]
+WantedBy=default.target
