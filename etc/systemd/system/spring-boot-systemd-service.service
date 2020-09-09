@@ -6,6 +6,7 @@ After=network.target syslog.target
 User=spring-boot-systemd-service
 #Environment=JAVA_TOOL_OPTIONS=
 Environment=LOG_FILE=/tmp/spring-boot-systemd-service.log
+Environment=SPRING_BANNER_MODE=off
 ExecStart=/path/to/java -jar /path/to/spring-boot-systemd-service.jar
 SuccessExitStatus=143
 
