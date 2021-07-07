@@ -5,6 +5,12 @@ plugins {
     id("org.springframework.boot").version("2.5.2")
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
 repositories {
     mavenCentral()
 }
@@ -16,10 +22,6 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-}
-
-test {
+tasks.withType(Test) {
     useJUnitPlatform()
 }
